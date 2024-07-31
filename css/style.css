@@ -32,6 +32,7 @@ img {
     position: fixed;
     top: 4.5em;
     background-color: white;
+    /* 314/1080 */
     width: 16.35%;
     border-bottom: 2px solid black;
     display: flex;
@@ -67,4 +68,54 @@ img {
 .socials-box * > .icon-box:hover {
     opacity: 100%;
     filter: invert(19%) sepia(67%) saturate(3610%) hue-rotate(329deg) brightness(100%) contrast(131%);
+}
+
+/* Fibonacci Nav Bar: */
+
+/* For 1920x1080, we want nav 72px margin*/
+.nav{
+    position: fixed;
+    /* 72/1080 */
+    top: 6.66%;
+    /* 72/1920 */
+    right: 3.75%;
+}
+
+.nav-item{
+    color: white;
+    font-family: "Inconsolata";
+    height: 10px;
+    width: 10px;
+    border: 1px solid white;
+}
+
+.nav-item > * {
+    visibility: hidden;
+}
+
+.nav-item div {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.nav-item > a {
+    color: white;
+}
+
+.magenta{
+    background-color: #ff0045;
+}
+
+.cyan{
+    background-color: #00ccff;
+}
+
+.yellow{
+    background-color: #ffba00;
+}
+
+.black{
+    background-color: black;
 }
