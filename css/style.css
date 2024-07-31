@@ -20,3 +20,51 @@ section{
     height: 100vh;
     width: 100%;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Socials box: */
+
+.socials-box{
+    position: fixed;
+    top: 4.5em;
+    background-color: white;
+    width: 16.35%;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    font-family: "Inconsolata";
+}
+
+.socials-box > * {
+    margin: 0 0 0 1em;
+}
+
+.socials-box > div {
+    font-size: 18pt;
+}
+
+.socials-box * > a {
+    color: #ff0045;
+}
+
+.socials-box > ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 0.625em;
+}
+
+.socials-box * > .icon-box {
+    width: 2em;
+    opacity: 25%;
+}
+
+.socials-box * > .icon-box:hover {
+    opacity: 100%;
+    filter: invert(19%) sepia(67%) saturate(3610%) hue-rotate(329deg) brightness(100%) contrast(131%);
+}
