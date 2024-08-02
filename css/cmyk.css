@@ -72,7 +72,7 @@ img {
 
 /* Fibonacci Nav Bar: */
 
-/* For 1920x1080, we want nav 72px margin*/
+/* For 1920x1080, I want nav 72px margin*/
 .nav{
     position: fixed;
     /* 72/1080 */
@@ -86,7 +86,7 @@ img {
     font-family: "Inconsolata";
     height: 10px;
     width: 10px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .nav-item > * {
@@ -104,18 +104,20 @@ img {
     color: white;
 }
 
-.magenta{
-    background-color: #ff0045;
-}
+/* CMYK Palette: */
 
-.cyan{
+.step-a{
     background-color: #00ccff;
 }
 
-.yellow{
+.step-b{
+    background-color: #ff0045;
+}
+
+.step-c{
     background-color: #ffba00;
 }
 
-.black{
+.step-d{
     background-color: black;
 }

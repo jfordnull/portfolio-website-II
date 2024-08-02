@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Julius+Sans+One&family=Silkscreen:wght@400;700&family=Tiny5&display=swap');
+
+*{
+    font-size: 16pt;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Socials box: */
+
+.socials-box{
+    position: fixed;
+    top: 4.5em;
+    background-color: black;
+    /* 314/1080 */
+    width: 16.35%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    font-family: "Inconsolata";
+}
+
+.socials-box::after{
+    content: '';
+    position: absolute;
+    bottom: -.25em;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #8e62ef,#080ac4);
+}
+
+.socials-box > * {
+    margin: 0 0 0 1em;
+}
+
+.socials-box > div {
+    font-size: 18pt;
+}
+
+.socials-box * > a {
+    color: #8e62ef;
+}
+
+.socials-box > ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 0.625em;
+}
+
+.socials-box * > .icon-box {
+    width: 2em;
+    opacity: 25%;
+    filter: invert(100%);
+}
+
+.socials-box * > .icon-box:hover {
+    opacity: 100%;
+    filter: invert(39%) sepia(80%) saturate(2380%) hue-rotate(236deg) brightness(100%) contrast(88%);
+}
+
+/* Fibonacci Nav Bar: */
+
+/* For 1920x1080, I want nav 72px margin*/
+.nav{
+    position: fixed;
+    /* 72/1080 */
+    top: 6.66%;
+    /* 72/1920 */
+    right: 3.75%;
+}
+
+.nav-item{
+    color: black;
+    font-family: "Inconsolata";
+    height: 10px;
+    width: 10px;
+    position: relative;
+    /* border: 1px solid white; */
+}
+
+.nav-item::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 2px;
+    border-radius: 2px;
+    filter: blur(3em);
+}
+
+.nav-item > * {
+    visibility: hidden;
+}
+
+.nav-item div {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.nav-item > a {
+    color: white;
+}
+
+/* Palette: */
+
+
+
+.step-a{
+    background-color: #8e62ef;
+}
+
+.step-b{
+    background-color: #5138f7;
+}
+
+.step-c{
+    background-color: #1418e9;
+}
+
+.step-d{
+    background-color: #080ac4;
+}
