@@ -1,13 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Julius+Sans+One&family=Silkscreen:wght@400;700&family=Tiny5&display=swap');
-
 /* Colors Variables: */
 
 :root{
-    --color-1: #8e62ef;
-    --color-2: #5138f7;
-    --color-3: #1418e9;
-    --color-4: #080ac4;
+    --color-1: #ff009c;
+    --color-2: #aa0068;
+    --color-3: #710045;
+    --color-4: #00fcc6;
     --accent-1: #ffba00;
+    --background: black;
+}
+/* 
+--color-1: #8e62ef;
+--color-2: #5138f7;
+--color-3: #1418e9;
+--color-4: #080ac4;
+--accent-1: #ffba00; */
+
+/* #e97393 */
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Julius+Sans+One&family=Silkscreen:wght@400;700&family=Tiny5&display=swap');
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-Black.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-ThinItalic.otf);
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'office';
+    src: url(../fonts/OfficeCodePro-Light.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'garamond';
+    src: url(../fonts/EBGaramond12-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* General */
@@ -25,7 +71,7 @@ a{
 }
 
 body{
-    background-color: black;
+    background-color: var(--background);
     color: white;
 }
 
@@ -44,27 +90,28 @@ img {
 .socials-box{
     position: fixed;
     top: 4.5em;
-    background-color: black;
+    background-color: var(--background);
     /* 314/1080 */
     width: 16.35%;
     display: flex;
+    border-bottom: 2px solid var(--color-4);
     flex-direction: column;
     gap: 2.5em;
-    font-family: "Inconsolata";
+    font-family: "garamond";
 }
 
-.socials-box::after{
+/* .socials-box::after{
     content: '';
     position: absolute;
     bottom: -.25em;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #8e62ef,black, #8e62ef);
+    background: linear-gradient(90deg, #00fcc6, black, #00fcc6);
     background-size: 200% 100%;
-    animation: animateBorder 6s linear infinite;
-    filter: blur(.005em);
-}
+    animation: animateBorder 10s linear infinite;
+    filter: blur(.0005em);
+} */
 
 @keyframes animateBorder {
     0% {
@@ -84,11 +131,11 @@ img {
 }
 
 .socials-box * > a {
-    color: var(--accent-1);
+    color: var(--color-4);
 }
 
 .socials-box * > a:hover {
-    text-decoration: underline;
+    text-decoration: underline var(--color-1);
 }
 
 .socials-box > ul {
@@ -104,14 +151,14 @@ img {
     filter: invert(100%);
 }
 
-.socials-box * > .icon-box:hover {
+.socials-box * > .icon-box:hover{
     opacity: 100%;
-    filter: invert(39%) sepia(80%) saturate(2380%) hue-rotate(236deg) brightness(100%) contrast(88%);
+    /* Barret Sonntag's CSS filter black -> hex color generator: */
+    filter: invert(39%) sepia(97%) saturate(7497%) hue-rotate(314deg) brightness(101%) contrast(116%);
 }
 
 /* Fibonacci Nav Bar: */
 
-/* For 1920x1080, I want nav 72px margin*/
 .nav{
     position: fixed;
     /* 72/1080 */
@@ -121,12 +168,21 @@ img {
 }
 
 .nav-item{
-    color: black;
-    font-family: "Inconsolata";
+    font-family: 'aileron';
+    font-weight: lighter;
+    font-style: italic;
     height: 10px;
     width: 10px;
     position: relative;
-    /* border: 1px solid white; */
+}
+
+@keyframes animateNavItem {
+    0% {
+        background-position: -300% 0;
+    }
+    100% {
+        background-position: 300% 0;
+    }
 }
 
 /* .nav-item::after{
@@ -162,17 +218,28 @@ img {
 /* Backgrounds: */
 
 .step-a{
-    background-color: var(--color-1);
+    background-color: black;
+    background-image: url(../img/nav/janbrueghel.png);
+    background-size: 300% 100%;
+    animation: animateNavItem 25s linear infinite;
+    background-blend-mode: screen;
+
 }
 
 .step-b{
-    background-color: var(--color-2);
+    background-color: var(--color-1);
 }
 
 .step-c{
-    background-color: var(--color-3);
+    background-color: var(--color-2);
+
+    background-blend-mode:screen;
 }
 
 .step-d{
-    background-color: var(--color-4);
+    background-color: var(--color-3);
+    /* background-image: url(../img/nav/pieterclaisez.png);
+    background-size: 300% 100%;
+    /* background-position: -90%; */
+    /* animation: animateNavItem 25s linear infinite; */
 }

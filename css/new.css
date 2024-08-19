@@ -1,0 +1,187 @@
+:root{
+
+    /* Color variables */
+    --accent: #00BD94;
+    --theme: #FF009C;
+    --theme-dim: #AA0068;
+    --theme-dimmer: #710045;
+    --background: black;
+    --foreground: white;
+
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-Thin.otf);
+    font-weight: thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-ThinItalic.otf);
+    font-weight: thin;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'aileron';
+    src: url(../fonts/Aileron-UltraLight.otf);
+    font-weight: 'ultralight';
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bagnard';
+    src: url(../fonts/Bagnard.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bluu';
+    src: url(../fonts/BluuNext-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+
+*{
+    font-size: 16pt;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/* Socials */
+
+.socials-box{
+    position: fixed;
+    top: 3.75%;
+    left: 1.56%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.48%;
+}
+
+.socials-box > div {
+    font-size: 2.125em;
+    color: var(--accent);
+    font-family: 'aileron';
+    font-weight: 'ultralight';
+    font-style: normal;
+}
+
+.socials-box > #res{
+    letter-spacing: 0.3em;
+}
+
+.socials-box > #ume{
+    letter-spacing: 0.16em;
+}
+
+/* Fib Nav Bar */
+
+.nav{
+    position: fixed;
+    top: 6.66%;
+    right: 3.75%;
+}
+
+.nav-item{
+    font-family: 'aileron';
+    font-weight: thin;
+    font-style: italic;
+    position: relative;
+}
+
+.nav-item > * {
+    visibility: hidden;
+}
+
+.nav-item div {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.nav-item > a {
+    color: var(--foreground);
+}
+
+#a{
+    background-color: var(--background);
+}
+
+#b{
+    background-color: var(--theme);
+    z-index: -2;
+}
+
+#c{
+    background-color: var(--theme-dim);
+    z-index: -2;
+}
+
+#d{
+    background-color: var(--theme-dimmer);
+    z-index: -2;
+}
+
+@property --angle{
+    syntax:'<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#a::after,#a::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent, var(--theme), var(--theme-dimmer));
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    padding:2px;
+    translate: -50% -50%;
+    animation: 2s spin linear infinite;
+}
+
+#a::before{
+    filter:blur(1.5em);
+    opacity:0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
